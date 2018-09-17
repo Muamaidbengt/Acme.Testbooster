@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.GenericBusiness", "Acme.GenericBusiness\Acme.GenericBusiness.csproj", "{B20A2785-CA24-432E-A56E-BD41F0F5EFB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Acme.GenericBusiness", "Acme.GenericBusiness\Acme.GenericBusiness.csproj", "{B20A2785-CA24-432E-A56E-BD41F0F5EFB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Acme.GenericBusiness.Tests", "Acme.GenericBusiness.Tests\Acme.GenericBusiness.Tests.csproj", "{9E8A75E9-6FD7-4C81-B17D-5232E4A2A36E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B20A2785-CA24-432E-A56E-BD41F0F5EFB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B20A2785-CA24-432E-A56E-BD41F0F5EFB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B20A2785-CA24-432E-A56E-BD41F0F5EFB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E8A75E9-6FD7-4C81-B17D-5232E4A2A36E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E8A75E9-6FD7-4C81-B17D-5232E4A2A36E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E8A75E9-6FD7-4C81-B17D-5232E4A2A36E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E8A75E9-6FD7-4C81-B17D-5232E4A2A36E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
