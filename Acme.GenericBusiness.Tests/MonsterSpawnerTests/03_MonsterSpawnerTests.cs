@@ -1,42 +1,37 @@
-﻿using System;
-using System.Linq;
-using Monsters;
-using FluentAssertions;
+﻿using Monsters;
 using Xunit;
 
-namespace Tests.MonsterSpawnerTests.ReflectedDiscovery
+namespace Tests.MonsterSpawnerTests.CustomAssertion
 {
-    using FluentAssertions.Execution;
-    using FluentAssertions.Types;
-    using System.Collections.Generic;
-
     [Trait("Category", nameof(IMonsterSpawner))]
-    public class AMonsterSpawner
+    public abstract class ASpawnedFourthLevelMonster
     {
-        [Theory]
-        [MemberData(nameof(MonsterSpawners))]
-        public void SpawnsAValidMonster(Type monsterSpawnerType)
+        private readonly Monster _monster;
+
+        protected ASpawnedFourthLevelMonster(IMonsterSpawner spawner)
         {
-            var spawner = (IMonsterSpawner)Activator.CreateInstance(monsterSpawnerType);
-            var monster = spawner.CreateMonster(4);
-            using (new AssertionScope())
-            {
-                monster.Name.Should().NotBeNullOrEmpty();
-                monster.Alignment.Should().Be(Alignment.Evil);
-                monster.Dexterity.Should().BeGreaterThan(0);
-                monster.Strength.Should().BeGreaterThan(0);
-                monster.Wisdom.Should().BeGreaterThan(0);
-                monster.Level.Should().Be(4);
-                monster.Hitpoints.Should().BeGreaterOrEqualTo(4);
-                monster.Weapon.Should().BeAssignableTo<Attack>();
-            }
+            _monster = spawner.CreateMonster(4);
         }
 
-        public static IEnumerable<object[]> MonsterSpawners()
+        [Fact]
+        public void IsAValidMonster()
         {
-            return AllTypes.From(typeof(IMonsterSpawner).Assembly)
-                .ThatImplement<IMonsterSpawner>()
-                .Select(t => new object[] {t});
+            _monster.Should()
+                .BeAValidMonster();
+        }
+    }
+
+    public class ASpawnedKobold : ASpawnedFourthLevelMonster
+    {
+        public ASpawnedKobold() : base(new AngryKoboldSpawner())
+        {
+        }
+    }
+
+    public class ASpawnedRabbit : ASpawnedFourthLevelMonster
+    {
+        public ASpawnedRabbit() : base(new HarmlessRabbitSpawner())
+        {
         }
     }
 }

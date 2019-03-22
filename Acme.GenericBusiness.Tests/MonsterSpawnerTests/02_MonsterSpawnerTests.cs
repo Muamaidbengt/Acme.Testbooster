@@ -1,11 +1,10 @@
 ﻿using Monsters;
 using FluentAssertions;
 using Xunit;
+using FluentAssertions.Execution;
 
 namespace Tests.MonsterSpawnerTests.SingleTestForAllProperties
 {
-    using FluentAssertions.Execution;
-
     [Trait("Category", nameof(IMonsterSpawner))]
     public abstract class ASpawnedFourthLevelMonster
     {

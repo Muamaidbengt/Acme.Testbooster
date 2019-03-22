@@ -12,5 +12,10 @@
         public int Strength { get; set; }
         public int Dexterity { get; set; }
         public int Wisdom { get; set; }
+
+        public override string ToString()
+        {
+            return $"A level {Level} {Name}";
+        }
     }
 }
