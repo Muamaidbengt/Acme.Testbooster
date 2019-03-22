@@ -20,11 +20,6 @@ namespace Tests
                 .Should().BeDecoratedWith<FactAttribute>();
         }
 
-        public void ForgottenTest()
-        {
-            "This is a test and it".Should().Be("run");
-        }
-
         public static IEnumerable<object[]> GetAllClassesInTestAssembly()
         {
             return AllTypes.From(typeof(TestsTests).Assembly).Select(x => new object[] {x});
