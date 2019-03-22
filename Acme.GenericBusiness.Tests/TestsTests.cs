@@ -5,7 +5,7 @@ using FluentAssertions;
 using FluentAssertions.Types;
 using Xunit;
 
-namespace Acme.GenericBusiness.Tests
+namespace Tests
 {
     [Trait("Category", "MetaTests")]
     public class TestsTests

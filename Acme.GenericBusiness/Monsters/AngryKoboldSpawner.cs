@@ -1,19 +1,21 @@
-﻿namespace Acme.GenericBusiness.MonsterSpawner
+﻿using Monsters.Equipment;
+
+namespace Monsters
 {
-    public class WorkingKoboldSpawner : IMonsterSpawner
+    public class AngryKoboldSpawner : IMonsterSpawner
     {
         public Monster CreateMonster(int level)
         {
             return new Monster
             {
-                Name = "Kobold",
+                Name = "Angry Kobold",
                 Alignment = Alignment.Evil,
                 Weapon = new RustyDagger(),
                 Strength = 10,
                 Dexterity = 14,
                 Wisdom = 8,
                 Level = level,
-                Hitpoints = level * 4
+                Hitpoints = Diceroll.D4(level)
             };
         }
     }

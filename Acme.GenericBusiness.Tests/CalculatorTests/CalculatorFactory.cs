@@ -1,6 +1,6 @@
-﻿using Acme.GenericBusiness.Calculator;
+﻿using Calculator;
 
-namespace Acme.GenericBusiness.Tests.CalculatorTests
+namespace Tests.CalculatorTests
 {
     public static class CalculatorFactory
     {

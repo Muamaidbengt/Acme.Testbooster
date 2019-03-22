@@ -1,4 +1,4 @@
-﻿namespace Acme.GenericBusiness.Bank
+﻿namespace Bank
 {
     public interface IBank
     {

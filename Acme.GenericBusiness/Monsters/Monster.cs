@@ -1,9 +1,9 @@
-﻿namespace Acme.GenericBusiness.MonsterSpawner
+﻿namespace Monsters
 {
     public class Monster
     {
         public string Name { get; set; }
-        public Weapon Weapon { get; set; }
+        public object Weapon { get; set; }
         public Alignment Alignment { get; set; }
         
         public int Level { get; set; }

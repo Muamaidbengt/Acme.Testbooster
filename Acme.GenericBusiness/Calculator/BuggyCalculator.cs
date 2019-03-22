@@ -1,4 +1,4 @@
-﻿namespace Acme.GenericBusiness.Calculator
+﻿namespace Calculator
 {
     public class BuggyCalculator : ICalculator
     {

@@ -1,10 +1,15 @@
 ﻿using System;
 
-namespace Acme.GenericBusiness.MonsterSpawner
+namespace Monsters
 {
     public static class Diceroll
     {
         private static Random _rnd = new Random();
+
+        private static int RollD4()
+        {
+            return _rnd.Next(1, 5);
+        }
 
         private static int RollD6()
         {
@@ -14,7 +19,12 @@ namespace Acme.GenericBusiness.MonsterSpawner
         private static int RollD8()
         {
             return _rnd.Next(1, 9);
-        } 
+        }
+
+        public static int D4(int times)
+        {
+            return Repeat(RollD4, times);
+        }
 
         public static int D6(int times)
         {

@@ -1,16 +1,18 @@
 ﻿using System;
 
-namespace Acme.GenericBusiness.Bank
+namespace Bank
 {
     public class ShadyBank : IBank
     {
         private readonly BankAccount _corruptManagerAccount = new BankAccount(0);
-        private static readonly Random Rnd = new Random(781372);
+        private Random Rnd;
 
         public void TransferMoney(BankAccount from, BankAccount to, decimal amount)
         {
+            Rnd = new Random((int)amount * 42);
             AdjustBalance(from, -amount);
             AdjustBalance(to, amount);
+            TransactionCount++;
         }
 
         public int TransactionCount { get; private set; }
@@ -25,9 +27,11 @@ namespace Acme.GenericBusiness.Bank
 
             account.Balance += amount - managersShare;
 
-            _corruptManagerAccount.Balance += managersShare;
-            
-            TransactionCount++;
+            if (managersShare > 0)
+            {
+                _corruptManagerAccount.Balance += managersShare;
+                TransactionCount++;
+            }
         }
     }
 }

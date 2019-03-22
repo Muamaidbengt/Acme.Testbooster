@@ -1,4 +1,4 @@
-﻿namespace Acme.GenericBusiness.MonsterSpawner
+﻿namespace Monsters
 {
     public enum Alignment
     {
