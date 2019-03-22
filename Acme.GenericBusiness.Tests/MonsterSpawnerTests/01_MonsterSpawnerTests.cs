@@ -10,7 +10,7 @@ namespace Tests.MonsterSpawnerTests
     {
         private readonly Monster _monster;
 
-        protected ASpawnedFourthLevelKobold()
+        public ASpawnedFourthLevelKobold()
         {
             var spawner = new AngryKoboldSpawner();
             _monster = spawner.CreateMonster(4);
@@ -38,7 +38,7 @@ namespace Tests.MonsterSpawnerTests
     {
         private readonly Monster _monster;
 
-        protected ASpawnedFourthLevelRabbit()
+        public ASpawnedFourthLevelRabbit()
         {
             var spawner = new HarmlessRabbitSpawner();
             _monster = spawner.CreateMonster(4);
